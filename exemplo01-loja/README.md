@@ -1,9 +1,5 @@
 # Primeiro projeto ReactJS no Serratec
 
-Pra começar meu repositório de estudos que com certeza vou voltar muito
-no futuro para ver como faz as coisas que eu esqueci e consultar meus
-maravilhosos e organizados códigos comentados.
-
 ## Scripts disponíveis
 
 In the project directory, you can run:
