@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    font-family: 'Palanquin', sans-serif;
+
+    background-color: #fafafa;
+}
