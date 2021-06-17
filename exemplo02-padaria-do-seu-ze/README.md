@@ -4,6 +4,9 @@ A API consumida neste repo está disponível em:
 
 https://padariaseuzeapi.herokuapp.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
 
+O código-fonte dessa API pode ser visualizado aqui:
+https://github.com/lucascs20182/serratec-padaria-seu-ze-api
+
 ## Scripts disponíveis
 
 In the project directory, you can run:
