@@ -1,14 +1,13 @@
-import Header from './components/Header';
+import Header from './components/Header.jsx';
+import Main from "./pages/Main.jsx";
 
 import './global.css';
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Header />
-      <main>
-        <p>hello world mais uma vez que é pra dar sorte</p>
-      </main>
+      <Main />
     </div>
   );
 }

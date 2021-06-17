@@ -1,6 +1,8 @@
-header {
-    background-color: black;
-    color: #fff;
-    padding: 10px 0;
+div.header {
+    padding: 25px;
     text-align: center;
+    color: #fff;
+    background-color: crimson;
+    font-size: 32px;
+    font-weight: 700;
 }
