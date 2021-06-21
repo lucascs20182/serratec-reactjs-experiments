@@ -6,17 +6,14 @@ import api from "../../../service/api";
 
 import "./index.css";
 
+const produto = new Produto();
+
 export default class CadastroProduto extends React.Component {
 
     constructor(props) {
         super(props)
 
-        this.state = {
-            nome: '',
-            quantidade: '',
-            valor: '',
-            urlImagem: ''
-        };
+        this.state = { produto }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,21 +23,14 @@ export default class CadastroProduto extends React.Component {
         const target = event.target;
         const name = target.name;
 
-        this.setState({
-            [name]: target.value
-        });
+        produto[name] = target.value;
+
+        this.setState({ produto })
     }
 
     async handleSubmit(event) {
 
         event.preventDefault();
-
-        const produto = new Produto({
-            nome: this.state.nome,
-            quantidade: this.state.quantidade,
-            valor: this.state.valor,
-            urlImagem: this.state.urlImagem
-        });
 
         try {
             const resposta = await api.post("/api/produtos", produto);
@@ -49,12 +39,17 @@ export default class CadastroProduto extends React.Component {
 
             // Limpa os campos
             this.setState({
-                nome: '',
-                quantidade: '',
-                valor: '',
-                urlImagem: ''
-            });
+                // por que se apenas instanciar não reseta os campos?
+                produto: new Produto({
+                    nome: '',
+                    quantidade: '',
+                    valor: '',
+                    urlImagem: ''
+                })
+            })
 
+            // atributos de produto ficam undefined
+            // console.log(this.state.produto)
         } catch (error) {
             console.log(error);
             alert("Ops, não foi possivel cadastrar este produto.");
@@ -67,22 +62,22 @@ export default class CadastroProduto extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="grupo">
                         <label htmlFor="nome">Nome:</label>
-                        <input name="nome" type="text" value={this.state.nome} onChange={this.handleChange} />
+                        <input name="nome" type="text" value={this.state.produto.nome} onChange={this.handleChange} />
                     </div>
 
                     <div className="grupo">
                         <label htmlFor="quantidade">Quantidade:</label>
-                        <input name="quantidade" type="number" value={this.state.quantidade} onChange={this.handleChange} />
+                        <input name="quantidade" type="number" value={this.state.produto.quantidade} onChange={this.handleChange} />
                     </div>
 
                     <div className="grupo">
                         <label htmlFor="valor">Valor:</label>
-                        <input name="valor" type="text" value={this.state.valor} onChange={this.handleChange} />
+                        <input name="valor" type="text" value={this.state.produto.valor} onChange={this.handleChange} />
                     </div>
 
                     <div className="grupo">
                         <label htmlFor="url">Url da imagem:</label>
-                        <input name="urlImagem" type="text" value={this.state.urlImagem} onChange={this.handleChange} />
+                        <input name="urlImagem" type="text" value={this.state.produto.urlImagem} onChange={this.handleChange} />
                     </div>
 
                     <div className="grupo">
