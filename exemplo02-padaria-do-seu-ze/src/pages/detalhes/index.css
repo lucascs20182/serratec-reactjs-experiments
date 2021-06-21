@@ -1,0 +1,8 @@
+.detalhes-produto{
+    padding: 25px;
+    text-align: center;
+}
+
+.detalhes-produto img {
+    height: 300px; /* define width automaticamente */
+}
