@@ -2,8 +2,11 @@ div.container {
     width: 100%;
     text-align: center;
     align-items: center;
-    margin-top: 15px;
+    /* margin-top: 15px; */
+}
 
+#root > div.container{
+    margin-top: 0;
 }
 
 div.container-produtos{
@@ -13,9 +16,9 @@ div.container-produtos{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 400px;
+    width: 580px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 10px;    
     text-align: start;
 }
 
@@ -25,6 +28,20 @@ div.produtos{
     background-color: #ddd;
     margin-bottom: 10px;
     border-radius: 5px;
+}
+
+div.produtos a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.produtos a > div {
+    align-self: center;
+}
+
+div.produtos :nth-child(2) img {
+    height: 150px;
 }
 
 div.produtos a {

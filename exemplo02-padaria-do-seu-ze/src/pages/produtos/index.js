@@ -66,15 +66,20 @@ export default class TelaProduto extends React.Component {
           {produtos.map((produto) => (
             <div className="produtos" key={produto.id}>
               <Link to={`/produtos/${produto.id}/detalhes`}>
-                <p>
-                  <strong>Id:</strong> {produto.id}{" "}
-                </p>
-                <p>
-                  <strong>Nome:</strong> {produto.nome}{" "}
-                </p>
-                <p>
-                  <strong>Valor</strong> {produto.valor}{" "}
-                </p>
+                <div>
+                  <p>
+                    <strong>Id:</strong> {produto.id}{" "}
+                  </p>
+                  <p>
+                    <strong>Nome:</strong> {produto.nome}{" "}
+                  </p>
+                  <p>
+                    <strong>Valor</strong> {produto.valor}{" "}
+                  </p>
+                </div>
+                <div>
+                  <p><img src={produto.urlImagem} alt={produto.nome} />{" "}</p>
+                </div>
               </Link>
             </div>
           ))}

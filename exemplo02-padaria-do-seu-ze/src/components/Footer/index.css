@@ -1,0 +1,22 @@
+div.footer {
+    background-color: #333;
+    margin-top: 15px;
+    height: 40px;
+    width: 100%;
+    bottom: 0;
+    
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400px;
+
+
+    display: flex;
+    position: fixed;
+}
+
+div.footer p {
+    width: 100%;
+
+    align-self: center;
+    justify-self: center;
+}

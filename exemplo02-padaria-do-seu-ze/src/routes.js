@@ -5,6 +5,7 @@ import CadastroProduto from "./pages/produtos/cadastro";
 import TelaProduto from "./pages/produtos";
 import Detalhes from "./pages/detalhes";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Carrinho from "./pages/carrinho";
 import Home from "./pages/home";
 
@@ -25,6 +26,7 @@ const Routes = () => (
             <Route path="/produtos/:id/detalhes" component= {Detalhes} />
             <Route path="/carrinho" component= {Carrinho} />
         </Switch>
+        <Footer/>
     </BrowserRouter>
 );
 
