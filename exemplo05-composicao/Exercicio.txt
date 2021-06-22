@@ -1,0 +1,7 @@
+Exercicio:
+
+Crie  um projeto ou pegue um pronto para atender as seguintes questões:
+
+1° Preciso de um componente para card de imagem
+Ese componente deve receber como filho a imagem que será renderizada na tela e 
+uma pequena descrição sobre esta imagem.
