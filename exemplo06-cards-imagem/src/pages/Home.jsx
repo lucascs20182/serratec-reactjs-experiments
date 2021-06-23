@@ -1,5 +1,7 @@
 import Produto from '../components/Produto';
 
+import { Card, HeaderImg, Descricao, CardContainer, ButtonJestor } from '../styles/card';
+
 const Home = () => {
     const produtos = [
         {
@@ -10,12 +12,16 @@ const Home = () => {
     ]
 
     return (
-        <div id="container-produtos">
+        <CardContainer>
             <Produto>{produtos[0]}</Produto>
-            {/* <Produto />
-            <Produto />
-            <Produto /> */}
-        </div>
+            <Produto secundary>{produtos[0]}</Produto>
+            <Produto>{produtos[0]}</Produto>
+            <Produto secundary>{produtos[0]}</Produto>
+            <Produto secundary>{produtos[0]}</Produto>
+            <Produto>{produtos[0]}</Produto>
+            <Produto secundary>{produtos[0]}</Produto>
+            <Produto>{produtos[0]}</Produto>
+        </CardContainer>
     )
 }
 

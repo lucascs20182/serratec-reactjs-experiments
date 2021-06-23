@@ -1,48 +1,24 @@
-import { Card, HeaderImg, Descricao, CardContainer } from '../styles/card';
+import { Card, HeaderImg, Descricao, CardContainer, ButtonJestor } from '../styles/card';
+
+import { Link } from "react-router-dom";
 
 const Produto = (props) => {
     return (
-        <CardContainer>
-            <Card>
-                <HeaderImg imagem={props.children.imagem} />
-                <Descricao>{props.children.descricao}</Descricao>
-            </Card>
+        <Card>
+            <HeaderImg imagem={props.children.imagem} />
+            <Descricao>{props.children.descricao}</Descricao>
 
-            <Card>
-                <HeaderImg imagem={props.children.imagem} />
-                <Descricao>{props.children.descricao}</Descricao>
-            </Card>
-
-            <Card>
-                <HeaderImg imagem={props.children.imagem} />
-                <Descricao>{props.children.descricao}</Descricao>
-            </Card>
-
-            <Card>
-                <HeaderImg imagem={props.children.imagem} />
-                <Descricao>{props.children.descricao}</Descricao>
-            </Card>       
-
-            <Card>
-                <HeaderImg imagem={props.children.imagem} />
-                <Descricao>{props.children.descricao}</Descricao>
-            </Card>
-
-            <Card>
-                <HeaderImg imagem={props.children.imagem} />
-                <Descricao>{props.children.descricao}</Descricao>
-            </Card>
-
-            <Card>
-                <HeaderImg imagem={props.children.imagem} />
-                <Descricao>{props.children.descricao}</Descricao>
-            </Card>
-
-            <Card>
-                <HeaderImg imagem={props.children.imagem} />
-                <Descricao>{props.children.descricao}</Descricao>
-            </Card>     
-        </CardContainer>
+            {
+                props.secundary ? 
+                    <ButtonJestor secundary>
+                        <Link to={`/produto/${props.children.id}`}>Detalhes</Link>
+                    </ButtonJestor>
+                :
+                    <ButtonJestor>
+                        <Link to={`/produto/${props.children.id}`}>Detalhes</Link>
+                    </ButtonJestor>
+            }
+        </Card>
     )
 }
 
