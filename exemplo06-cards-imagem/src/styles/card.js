@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const HeaderImg = styled.img.attrs({
-    src: 'https://i.pinimg.com/originals/8d/8c/0f/8d8c0feccecfc9286a3b2d97fe95e15b.jpg'
-})`
+export const HeaderImg = styled.img.attrs(props => ({
+    src: props.imagem
+}))`
 width: 200px;
 border: 1px solid black;
 `
@@ -24,4 +24,12 @@ export const Card = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+`;
+
+export const CardContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 `;

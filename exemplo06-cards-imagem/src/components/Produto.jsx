@@ -1,11 +1,48 @@
-import { Card, HeaderImg, Descricao } from '../styles/card';
+import { Card, HeaderImg, Descricao, CardContainer } from '../styles/card';
 
-const Produto = () => {
+const Produto = (props) => {
     return (
-        <Card>
-            <HeaderImg />
-            <Descricao>Lorem ipsum dolor sit amet.</Descricao>
-        </Card>
+        <CardContainer>
+            <Card>
+                <HeaderImg imagem={props.children.imagem} />
+                <Descricao>{props.children.descricao}</Descricao>
+            </Card>
+
+            <Card>
+                <HeaderImg imagem={props.children.imagem} />
+                <Descricao>{props.children.descricao}</Descricao>
+            </Card>
+
+            <Card>
+                <HeaderImg imagem={props.children.imagem} />
+                <Descricao>{props.children.descricao}</Descricao>
+            </Card>
+
+            <Card>
+                <HeaderImg imagem={props.children.imagem} />
+                <Descricao>{props.children.descricao}</Descricao>
+            </Card>       
+
+            <Card>
+                <HeaderImg imagem={props.children.imagem} />
+                <Descricao>{props.children.descricao}</Descricao>
+            </Card>
+
+            <Card>
+                <HeaderImg imagem={props.children.imagem} />
+                <Descricao>{props.children.descricao}</Descricao>
+            </Card>
+
+            <Card>
+                <HeaderImg imagem={props.children.imagem} />
+                <Descricao>{props.children.descricao}</Descricao>
+            </Card>
+
+            <Card>
+                <HeaderImg imagem={props.children.imagem} />
+                <Descricao>{props.children.descricao}</Descricao>
+            </Card>     
+        </CardContainer>
     )
 }
 
