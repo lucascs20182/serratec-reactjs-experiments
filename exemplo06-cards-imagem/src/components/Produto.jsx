@@ -1,4 +1,4 @@
-import { Card, HeaderImg, Descricao, CardContainer, ButtonJestor } from '../styles/card';
+import { Card, HeaderImg, Descricao, ButtonJestor } from '../styles/card';
 
 import { Link } from "react-router-dom";
 

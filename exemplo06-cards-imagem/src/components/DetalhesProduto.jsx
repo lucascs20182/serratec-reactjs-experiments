@@ -1,6 +1,9 @@
 const DetalhesProduto = (props) => {
     return (
-        <p>amigo estou aqui</p>
+        <div>
+            <p>{props.children.id}</p>
+            <p>{props.children.descricao}</p>
+        </div>
     )
 }
 

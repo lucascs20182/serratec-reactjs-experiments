@@ -1,6 +1,6 @@
 import Produto from '../components/Produto';
 
-import { Card, HeaderImg, Descricao, CardContainer, ButtonJestor } from '../styles/card';
+import { CardContainer } from '../styles/card';
 
 const Home = () => {
     const produtos = [
