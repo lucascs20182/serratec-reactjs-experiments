@@ -36,6 +36,10 @@ const TelaInicial = () => {
 
     return (
         <CardContainer >
+            {
+                produtos.length == 0 ? "Não há produtos cadastrados" : ""
+            }
+
             {produtos.map(produto => (
                 <Produto key={produto.id}>{produto}</Produto>
             ))}
