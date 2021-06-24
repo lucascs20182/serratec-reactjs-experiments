@@ -1,0 +1,30 @@
+form {
+    width: 340px;
+    height: 200px;
+    border: 1px solid #ddd;
+    padding: 5px;    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo input {
+    outline: none;
+    padding: 3px;
+}
+
+button {
+    padding: 5px;
+}
+
+a {
+    align-self: flex-end;
+    margin: 5px;
+}
