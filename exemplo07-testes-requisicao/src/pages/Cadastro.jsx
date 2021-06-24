@@ -68,7 +68,7 @@ const Cadastro = () => {
                 
                 <input required type="text" id="nome" value={nome}
                     onChange={e => setNome(e.target.value)}
-                    placeholder="Karine Alves" />
+                    placeholder="Karine Escobar" />
             </div>
 
             <div className="campo">

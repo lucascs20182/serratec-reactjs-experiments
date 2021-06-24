@@ -6,7 +6,7 @@ const Produto = (props) => {
     return (
         <Card>
             <HeaderImg imagem={props.children.url} />
-            <Descricao>{props.children.descricao}</Descricao>
+            <Descricao>{props.children.nome}</Descricao>
 
             {
                 props.secundary ? 
