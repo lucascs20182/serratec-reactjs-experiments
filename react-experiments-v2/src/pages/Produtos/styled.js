@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    height: 100vh;
-    width: 100vw;
     max-width: 991px;
-    margin: 0 auto;
+    margin: 25px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,5 +26,12 @@ export const List = styled.ul`
         background: #000;
         color: #fff;
         padding: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        p {
+            margin-left: 15px;
+        }
     }
 `

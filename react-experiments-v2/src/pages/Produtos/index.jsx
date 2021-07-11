@@ -1,17 +1,30 @@
 import { Container, Title, List } from './styled';
+import { useEffect, useState } from 'react';
 
-export default function Produtos(props) {
+export default function Produtos() {
+    const [usuario, setUsuario] = useState('');
+    const [produtos, setProdutos] = useState([]);
+
+    useEffect(() => {
+        setUsuario(localStorage.getItem('usuario'));
+        const produtos = localStorage.getItem('produtos');
+        setProdutos(JSON.parse(produtos));
+    }, [])
+
     return (
         <Container>
-            <Title>{`Produtos de ${props.user} || Não programado ainda`}</Title>
+            <Title>{`Produtos de ${usuario}`}</Title>
             <List>
-                <li>Repo 1</li>
-                <li>Repo 2</li>
-                <li>Repo 3</li>
-                <li>Repo 4</li>
-                <li>Repo 5</li>
-                <li>Repo 6</li>
-                <li>Repo 7</li>
+                {produtos.map(produto => {
+                    console.log(produto);
+
+                    return (
+                        <li key={produto.id}>
+                            <img src={produto.url} alt="imagem do produto" height="100px" />
+                            <p>{`${produto.nome} - ${produto.autor}`}</p>
+                        </li>
+                    )
+                })}
             </List>
         </Container>
     )
