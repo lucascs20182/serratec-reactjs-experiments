@@ -13,63 +13,35 @@ export default function Home() {
   function handlePesquisa() {
     setLoading(true);
 
-    let dadosRelevantes = [];
+    localStorage.setItem('usuario', usuario);
 
-    axios.get(`https://api.github.com/users/${usuario}/repos`)
+    axios.get(`https://serratec-ecommerce-grupo2.herokuapp.com/produto`)
       .then(res => {
-        const repos = res.data;
-
-        repos.map(repo => {
-          let languages = {}
-
-          axios.get(repo.languages_url)
-            .then(res => {
-              console.log(res.data)
-              languages = res.data;
-            })
-            .catch(err => {
-              languages = {
-                error: err
-              }
-            })
-
-          let temp = {
-            id: repo.id,
-            url: repo.url,
-            created_at: repo.created_at,
-            full_name: repo.full_name,
-            homepage: repo.homepage,
-            languages,
-            updated_at: repo.updated_at
-          }
-
-          dadosRelevantes.push(temp);
-        })
-
-        // console.log(dadosRelevantes);
+        const produtos = res.data;
+        localStorage.setItem('produtos', JSON.stringify(produtos));
         setSituacaoPesquisa(true);
-
         setLoading(false);
+
+        console.log()
       })
       .catch(err => {
         setSituacaoPesquisa(false);
-
         setLoading(false);
       });
   }
 
   return (
     <Container>      
+      {loading  ? '' : <label htmlFor="usuario">Como devemos te chamar?</label>}
       <div>
-        <Input type="text" placeholder="ex.: lucascs20182" value={usuario}
+        <Input id="usuario" placeholder="ex.: Lukinha do Grau" value={usuario}
           className="usernameInput" onChange={e => setUsuario(e.target.value)} />
         
-        <Button onClick={handlePesquisa}>Pesquisar</Button>
+        <Button onClick={handlePesquisa}>Entrar</Button>
       </div>
 
       {loading ? <img src={loadingImg} alt="loading..." /> : ''}
-
-      {situacaoPesquisa === false ? <p>Usuário não encontrado. Tente novamente.</p> : ''}
+      {situacaoPesquisa === false ? <p>Algo deu errado :( check o console.</p> : ''}
     </Container>
   )
 }

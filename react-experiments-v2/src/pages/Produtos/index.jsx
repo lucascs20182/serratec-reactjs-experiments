@@ -1,9 +1,9 @@
 import { Container, Title, List } from './styled';
 
-export default function Repos(props) {
+export default function Produtos(props) {
     return (
         <Container>
-            <Title>{`Repositórios de ${props.user}`}</Title>
+            <Title>{`Produtos de ${props.user} || Não programado ainda`}</Title>
             <List>
                 <li>Repo 1</li>
                 <li>Repo 2</li>
