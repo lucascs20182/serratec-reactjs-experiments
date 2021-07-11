@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 import { Container, Input, Button } from './styled';
 
@@ -9,6 +10,8 @@ export default function Home() {
   const [usuario, setUsuario] = useState('');
   const [situacaoPesquisa, setSituacaoPesquisa] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  const history = useHistory();
 
   function handlePesquisa() {
     setLoading(true);
@@ -22,7 +25,7 @@ export default function Home() {
         setSituacaoPesquisa(true);
         setLoading(false);
 
-        console.log()
+        history.push('/produtos')
       })
       .catch(err => {
         setSituacaoPesquisa(false);
