@@ -13,9 +13,40 @@ export default function Home() {
   function handlePesquisa() {
     setLoading(true);
 
+    let dadosRelevantes = [];
+
     axios.get(`https://api.github.com/users/${usuario}/repos`)
       .then(res => {
-        console.log(res);
+        const repos = res.data;
+
+        repos.map(repo => {
+          let languages = {}
+
+          axios.get(repo.languages_url)
+            .then(res => {
+              console.log(res.data)
+              languages = res.data;
+            })
+            .catch(err => {
+              languages = {
+                error: err
+              }
+            })
+
+          let temp = {
+            id: repo.id,
+            url: repo.url,
+            created_at: repo.created_at,
+            full_name: repo.full_name,
+            homepage: repo.homepage,
+            languages,
+            updated_at: repo.updated_at
+          }
+
+          dadosRelevantes.push(temp);
+        })
+
+        // console.log(dadosRelevantes);
         setSituacaoPesquisa(true);
 
         setLoading(false);
