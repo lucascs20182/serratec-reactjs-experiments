@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/serratec-reactjs-experiments/static/css/main.5a0dc66a.chunk.css",
+    "main.js": "/serratec-reactjs-experiments/static/js/main.861e2965.chunk.js",
+    "main.js.map": "/serratec-reactjs-experiments/static/js/main.861e2965.chunk.js.map",
+    "runtime-main.js": "/serratec-reactjs-experiments/static/js/runtime-main.5db28367.js",
+    "runtime-main.js.map": "/serratec-reactjs-experiments/static/js/runtime-main.5db28367.js.map",
+    "static/js/2.ef7a4f25.chunk.js": "/serratec-reactjs-experiments/static/js/2.ef7a4f25.chunk.js",
+    "static/js/2.ef7a4f25.chunk.js.map": "/serratec-reactjs-experiments/static/js/2.ef7a4f25.chunk.js.map",
+    "index.html": "/serratec-reactjs-experiments/index.html",
+    "static/css/main.5a0dc66a.chunk.css.map": "/serratec-reactjs-experiments/static/css/main.5a0dc66a.chunk.css.map",
+    "static/js/2.ef7a4f25.chunk.js.LICENSE.txt": "/serratec-reactjs-experiments/static/js/2.ef7a4f25.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5db28367.js",
+    "static/js/2.ef7a4f25.chunk.js",
+    "static/css/main.5a0dc66a.chunk.css",
+    "static/js/main.861e2965.chunk.js"
+  ]
+}
