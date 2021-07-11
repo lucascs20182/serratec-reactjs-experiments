@@ -1,18 +1,28 @@
 import { useState } from 'react';
+import axios from 'axios';
 
-// exemplo de controlled component
-export default function App(props) {
-  const [user, setUser] = useState('');
+export default function App() {
+  const [usuario, setUsuario] = useState('');
+  const [situacaoPesquisa, setSituacaoPesquisa] = useState(true);
+
+  function handlePesquisa() {
+    axios.get(`https://api.github.com/users/${usuario}/repos`)
+      .then(res => {
+        console.log(res);
+        setSituacaoPesquisa(true);
+      })
+      .catch(err => setSituacaoPesquisa(false));
+  }
 
   return (
     <>
-      <p>{user}</p>
-
-      <label htmlFor="username">Username:</label>
-      <input type="text" placeholder="ex.: lucascs20182" value={user}
-        className="usernameInput" onChange={e => setUser(e.target.value)} />
+      {situacaoPesquisa === false ? <p>Usuário não encontrado. Tente novamente.</p> : ''}
       
-      <button>Pesquisar</button>
+      <label htmlFor="username">Username:</label>
+      <input type="text" placeholder="ex.: lucascs20182" value={usuario}
+        className="usernameInput" onChange={e => setUsuario(e.target.value)} />
+      
+      <button onClick={handlePesquisa}>Pesquisar</button>
     </>
   )
 }
